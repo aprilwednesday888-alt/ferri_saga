@@ -1,492 +1,1516 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equitas Strategic Hub | Integrated Legal & Property Solutions</title>
-    
+    <title>I Made Agus Ferri Saga | Executive Leader & Digital Strategist</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Montserrat & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
                     colors: {
                         navy: {
-                            800: '#1a2a3a',
-                            900: '#0f172a',
-                            950: '#080c17',
+                            950: '#060a12',
+                            900: '#0a0f1d',
+                            850: '#0f172a',
+                            800: '#141e33',
+                            700: '#1e293b',
+                            600: '#334155'
                         },
                         gold: {
-                            400: '#d4af37',
-                            500: '#bf953f',
-                            600: '#aa7c11',
+                            300: '#fef08a',
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#d4af37',
+                            700: '#ca8a04',
+                            800: '#854d0e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 3s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        glow: {
+                            '0%': { opacity: '0.4', filter: 'blur(20px)' },
+                            '100%': { opacity: '0.8', filter: 'blur(30px)' },
                         }
                     }
                 }
             }
         }
     </script>
+
     <style>
-        /* Custom styles for animations and specific elements */
+        /* Custom scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0f1d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+
+        /* Glassmorphism Styles */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            background: rgba(20, 30, 51, 0.85);
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 20px 0 rgba(212, 175, 55, 0.15);
+        }
         .glass-nav {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(12px);
+            background: rgba(10, 15, 29, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
         }
-        .hero-bg {
-            background-image: linear-gradient(rgba(8, 12, 23, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+        
+        /* Gold Gradient Text */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fff2be 0%, #d4af37 50%, #aa7c11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+        /* Timeline Connector */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 2px;
+            background: linear-gradient(180deg, #d4af37 0%, rgba(212, 175, 55, 0.1) 100%);
         }
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .service-card:hover .service-icon {
-            transform: scale(1.1);
-            color: #bf953f;
+        @media (min-width: 768px) {
+            .timeline-line::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
     </style>
 </head>
-<body class="font-sans text-gray-800 bg-gray-50 antialiased selection:bg-gold-500 selection:text-white">
+<body class="bg-navy-900 text-slate-200 font-sans antialiased selection:bg-gold-600 selection:text-navy-950 min-h-screen relative overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 glass-nav border-b border-white/10 transition-all duration-300" id="navbar">
+    <!-- Glowing Background Ambient Spheres -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-gold-600/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute top-1/3 -right-40 w-[30rem] h-[30rem] bg-amber-500/10 rounded-full blur-3xl animate-glow"></div>
+        <div class="absolute bottom-10 left-1/4 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <div class="w-10 h-10 border-2 border-gold-500 flex items-center justify-center rounded-sm mr-3">
-                        <span class="font-serif font-bold text-gold-500 text-xl">E</span>
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#hero" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-400 to-gold-700 flex items-center justify-center font-heading font-black text-navy-950 text-xl shadow-lg shadow-gold-600/20 group-hover:scale-105 transition-transform">
+                        FS
                     </div>
-                    <span class="font-serif font-bold text-white tracking-widest uppercase text-lg hidden sm:block">Equitas<span class="text-gold-500 text-xs ml-2 tracking-[0.2em] font-sans font-light">Strategic Hub</span></span>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#vision" class="text-gray-300 hover:text-gold-400 text-sm tracking-wide transition-colors">VISION</a>
-                    <a href="#services" class="text-gray-300 hover:text-gold-400 text-sm tracking-wide transition-colors">SERVICES</a>
-                    <a href="#network" class="text-gray-300 hover:text-gold-400 text-sm tracking-wide transition-colors">THE NETWORK</a>
-                    <a href="#contact" class="bg-gold-600 hover:bg-gold-500 text-white px-6 py-2.5 rounded text-sm font-medium tracking-wide transition-all shadow-[0_0_15px_rgba(191,149,63,0.3)] hover:shadow-[0_0_20px_rgba(191,149,63,0.5)]">
-                        PRIVATE BRIEFING
-                    </a>
+                    <div class="flex flex-col">
+                        <span class="font-heading font-bold text-lg text-white tracking-wide leading-tight group-hover:text-gold-400 transition-colors">
+                            I MADE AGUS FERRI SAGA
+                        </span>
+                        <span class="text-xs text-gold-500 tracking-wider font-medium uppercase">
+                            Interdisciplinary Legal & Tech Leader
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+                    <a href="#about" class="text-slate-300 hover:text-gold-400 transition-colors">About</a>
+                    <a href="#expertise" class="text-slate-300 hover:text-gold-400 transition-colors">Expertise</a>
+                    <a href="#ventures" class="text-slate-300 hover:text-gold-400 transition-colors">Ventures</a>
+                    <a href="#timeline" class="text-slate-300 hover:text-gold-400 transition-colors">Experience</a>
+                    <a href="#education" class="text-slate-300 hover:text-gold-400 transition-colors">Education</a>
+                    <a href="#contact" class="text-slate-300 hover:text-gold-400 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Navigation Action Buttons -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <button onclick="openModal('consultationModal')" class="px-5 py-2.5 rounded-lg font-heading font-semibold text-xs tracking-wider uppercase text-navy-950 bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 hover:from-gold-300 hover:to-gold-500 shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 transition-all duration-300 active:scale-95 flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check text-navy-950"></i> Book Consultation
+                    </button>
                 </div>
 
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-navy-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
                     </button>
                 </div>
             </div>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-t border-gray-800">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#vision" class="block px-3 py-2 text-base text-gray-300 hover:text-gold-400 hover:bg-navy-800 rounded-md">Vision</a>
-                <a href="#services" class="block px-3 py-2 text-base text-gray-300 hover:text-gold-400 hover:bg-navy-800 rounded-md">Services</a>
-                <a href="#network" class="block px-3 py-2 text-base text-gray-300 hover:text-gold-400 hover:bg-navy-800 rounded-md">The Network</a>
-                <a href="#contact" class="block px-3 py-2 text-base text-gold-400 hover:text-gold-300 font-medium">Book Consultation</a>
+
+        <!-- Mobile Navigation Menu Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden glass-card border-t border-slate-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold-400 hover:bg-navy-800">About Overview</a>
+            <a href="#expertise" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold-400 hover:bg-navy-800">Areas of Expertise</a>
+            <a href="#ventures" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold-400 hover:bg-navy-800">Primary Ventures</a>
+            <a href="#timeline" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold-400 hover:bg-navy-800">Career Journey</a>
+            <a href="#education" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold-400 hover:bg-navy-800">Academic Background</a>
+            <a href="#contact" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold-400 hover:bg-navy-800">Direct Contact</a>
+            <div class="pt-2">
+                <button onclick="openModal('consultationModal')" class="w-full py-3 rounded-lg font-heading font-bold text-xs tracking-wider uppercase text-navy-950 bg-gradient-to-r from-gold-400 to-gold-600 text-center shadow-md">
+                    Book Executive Consultation
+                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
-        <!-- Decorative elements -->
-        <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-30"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-20">
-            <div class="max-w-3xl">
-                <div class="inline-block border border-gold-500/50 rounded-full px-4 py-1.5 mb-6 backdrop-blur-sm">
-                    <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase">100% Legal & Anti-Nominee Compliance</span>
-                </div>
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-tight mb-6 font-bold">
-                    Transforming Foreign Capital Into <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600">Secure Assets.</span>
-                </h1>
-                <p class="text-lg md:text-xl text-gray-300 mb-10 font-light max-w-2xl leading-relaxed">
-                    Satu-satunya mitra strategis terintegrasi di Indonesia yang mengeksekusi pendirian korporasi, kepatuhan hukum penuh, hingga manajemen infrastruktur di bawah satu atap eksklusif.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#contact" class="bg-gold-600 hover:bg-gold-500 text-white px-8 py-4 rounded text-center text-sm font-semibold tracking-wider transition-all">
-                        INITIATE DISCOVERY
-                    </a>
-                    <a href="#services" class="border border-white/30 hover:border-gold-400 text-white hover:text-gold-400 px-8 py-4 rounded text-center text-sm font-semibold tracking-wider transition-all backdrop-blur-sm">
-                        VIEW ECOSYSTEM
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i class="fas fa-chevron-down text-white/50 text-xl"></i>
-        </div>
-    </section>
-
-    <section id="vision" class="py-24 bg-white relative">
+    <section id="hero" class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="reveal">
-                    <h2 class="text-3xl md:text-4xl font-serif text-navy-900 font-bold mb-6 relative">
-                        The Cost of Fragmented Integration
-                        <span class="absolute -bottom-3 left-0 w-16 h-1 bg-gold-500"></span>
-                    </h2>
-                    <p class="text-gray-600 mb-6 mt-10 leading-relaxed text-lg">
-                        Berinvestasi di Indonesia sering kali menjadi labirin birokrasi bagi investor asing. Menggunakan pengacara, arsitek, dan kontraktor secara terpisah menciptakan celah regulasi yang fatal.
-                    </p>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start">
-                            <span class="flex-shrink-0 w-6 h-6 rounded-full border border-red-500 text-red-500 flex items-center justify-center mt-1 mr-4 text-xs"><i class="fas fa-times"></i></span>
-                            <div>
-                                <strong class="text-navy-900 block">Risiko Nominee Ilegal</strong>
-                                <span class="text-gray-500 text-sm">Praktik pinjam nama yang mengancam keamanan 100% modal Anda di mata hukum.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="flex-shrink-0 w-6 h-6 rounded-full border border-red-500 text-red-500 flex items-center justify-center mt-1 mr-4 text-xs"><i class="fas fa-times"></i></span>
-                            <div>
-                                <strong class="text-navy-900 block">Silo Perizinan Teknis</strong>
-                                <span class="text-gray-500 text-sm">Desain arsitektur yang tidak sinkron dengan zonasi legal (ITR), menunda realisasi proyek berbulan-bulan.</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
                 
-                <div class="bg-navy-900 p-10 lg:p-12 rounded-lg shadow-2xl relative reveal border-t-4 border-gold-500">
-                    <div class="absolute top-0 right-0 p-6 opacity-10">
-                        <i class="fas fa-shield-alt text-8xl text-white"></i>
+                <!-- Hero Left Content Column -->
+                <div class="lg:col-span-7 space-y-8">
+                    <!-- Executive Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-gold-500/30 text-xs font-semibold text-gold-400 tracking-wider uppercase">
+                        <span class="w-2 h-2 rounded-full bg-gold-400 animate-ping"></span>
+                        <span>Interdisciplinary Legal & Digital Technology Background</span>
                     </div>
-                    <h3 class="text-2xl font-serif text-white mb-4 relative z-10">The Unified Ecosystem Strategy</h3>
-                    <p class="text-gray-300 mb-8 relative z-10 leading-relaxed font-light">
-                        Kami memotong birokrasi dengan bertindak sebagai <strong>Single Point of Contact</strong>. Kami mengintegrasikan seluruh lini proyek Anda—memastikan tidak ada celah antara de jure (hukum tertulis) dan de facto (eksekusi lapangan).
+
+                    <!-- Main Headline -->
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+                        Integrating 14+ Years Leadership with <span class="gold-gradient-text block mt-1">Legal Architecture & Tech</span>
+                    </h1>
+
+                    <!-- Hero Subtitle -->
+                    <p class="text-lg text-slate-300 leading-relaxed font-light max-w-2xl">
+                        Combining <strong class="text-gold-400 font-semibold">14+ years of proven executive leadership</strong> with active studies in Law and Informatics Engineering to drive foreign investment, corporate strategy, and digital solutions in Indonesia.
                     </p>
-                    
-                    <div class="flex items-center justify-between text-gold-400 text-sm font-semibold tracking-widest relative z-10 bg-navy-950 p-4 rounded border border-white/10">
-                        <div class="text-center"><i class="fas fa-briefcase block text-xl mb-2 text-white"></i>LEGAL</div>
-                        <i class="fas fa-arrow-right text-gray-600"></i>
-                        <div class="text-center"><i class="fas fa-landmark block text-xl mb-2 text-white"></i>AUTHORITY</div>
-                        <i class="fas fa-arrow-right text-gray-600"></i>
-                        <div class="text-center"><i class="fas fa-building block text-xl mb-2 text-white"></i>PROPERTY</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="services" class="py-24 bg-gray-50 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <span class="text-gold-600 font-bold tracking-widest text-sm uppercase">Our Expertise</span>
-                <h2 class="text-3xl md:text-5xl font-serif text-navy-900 font-bold mt-2">Matrix of Services</h2>
-                <div class="w-20 h-1 bg-gold-500 mx-auto mt-6"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white rounded-lg p-8 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-all duration-300 reveal service-card group">
-                    <div class="w-14 h-14 bg-navy-50 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-globe text-2xl text-navy-900 service-icon transition-transform duration-300"></i>
-                    </div>
-                    <h3 class="text-xl font-serif text-navy-900 font-bold mb-3 group-hover:text-gold-600 transition-colors">Corporate & Immigration</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
-                        Fondasi legal operasional perusahaan yang solid dan fasilitas mobilitas ekspatriat tanpa hambatan.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-700 font-medium">
-                        <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2 text-xs"></i> Pendirian PT PMA & PT Domestik</li>
-                        <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2 text-xs"></i> Lisensi OSS-RBA & Izin Sektoral</li>
-                        <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2 text-xs"></i> Investor Visa & KITAS Management</li>
-                    </ul>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="bg-white rounded-lg p-8 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-all duration-300 reveal service-card group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-gold-500 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-wider rounded-bl-lg">Core Strength</div>
-                    <div class="w-14 h-14 bg-navy-50 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-scale-balanced text-2xl text-navy-900 service-icon transition-transform duration-300"></i>
-                    </div>
-                    <h3 class="text-xl font-serif text-navy-900 font-bold mb-3 group-hover:text-gold-600 transition-colors">Business & Legal Architecture</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
-                        Mitigasi risiko aset dan perancangan struktur kontrak kemitraan melalui skema yang 100% legal.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-700 font-medium">
-                        <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2 text-xs"></i> Land Due Diligence (Uji Tuntas)</li>
-                        <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2 text-xs"></i> Joint Venture (JV) Structuring</li>
-                        <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2 text-xs"></i> Certified Interpreter Negotiation</li>
-                    </ul>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="bg-white rounded-lg p-8 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-all duration-300 reveal service-card group">
-                    <div class="w-14 h-14 bg-navy-50 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-helmet-safety text-2xl text-navy-900 service-icon transition-transform duration-300"></i>
-                    </div>
-                    <h3 class="text-xl font-serif text-navy-900 font-bold mb-3 group-hover:text-gold-600 transition-colors">Infrastructure & PMO</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
-                        Realisasi fisik dari desain arsitektur hingga serah terima aset yang patuh pada tata ruang daerah.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-700 font-medium">
-                        <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2 text-xs"></i> Secured Bridging Acquisition</li>
-                        <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2 text-xs"></i> Pengurusan PBG & ITR</li>
-                        <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2 text-xs"></i> Project Management Office</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="network" class="py-24 bg-navy-900 relative overflow-hidden">
-        <!-- Abstract background pattern -->
-        <div class="absolute opacity-5 pointer-events-none w-full h-full" style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%); background-size: 30px 30px;"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 reveal">
-                <span class="text-gold-400 font-bold tracking-widest text-sm uppercase">Elite Partnership</span>
-                <h2 class="text-3xl md:text-5xl font-serif text-white font-bold mt-2">The Founders Network</h2>
-                <div class="w-20 h-1 bg-gold-500 mx-auto mt-6"></div>
-                <p class="text-gray-400 mt-6 max-w-2xl mx-auto font-light">
-                    Digerakkan oleh aliansi tiga profesional senior dengan keahlian spesifik. Kami beroperasi melalui sistem kolaborasi horizontal untuk menjamin eksekusi yang presisi tanpa benturan kepentingan.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Profile 1 -->
-                <div class="bg-navy-800/50 backdrop-blur-sm border border-white/10 p-8 rounded hover:bg-navy-800 transition duration-300 reveal">
-                    <div class="w-12 h-12 bg-navy-950 border border-gold-500/30 rounded flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(212,175,55,0.1)]">
-                        <span class="font-serif text-gold-400 font-bold text-xl">S</span>
-                    </div>
-                    <h3 class="text-white font-serif text-lg font-bold mb-2">Client Strategist</h3>
-                    <p class="text-gold-500 text-xs tracking-widest uppercase mb-4">Interpreter & Negosiator</p>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Profesional dengan 14 tahun pengalaman manajemen eksekutif. Bertindak sebagai jangkar komunikasi dwibahasa, perancang skema makro *Joint Venture*, dan pelindung komersial bagi investasi asing Anda.
-                    </p>
-                </div>
-
-                <!-- Profile 2 -->
-                <div class="bg-navy-800/50 backdrop-blur-sm border border-white/10 p-8 rounded hover:bg-navy-800 transition duration-300 reveal" style="transition-delay: 100ms;">
-                    <div class="w-12 h-12 bg-navy-950 border border-gold-500/30 rounded flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(212,175,55,0.1)]">
-                        <span class="font-serif text-gold-400 font-bold text-xl">L</span>
-                    </div>
-                    <h3 class="text-white font-serif text-lg font-bold mb-2">Corporate Legal</h3>
-                    <p class="text-gold-500 text-xs tracking-widest uppercase mb-4">Notariat Liaison & Compliance</p>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Spesialis hukum korporasi dan mitigasi risiko pertanahan. Bertanggung jawab mengamankan seluruh anatomi kontrak (PPJB, Akta Sewa) dan memastikan sinkronisasi absolut dengan institusi Notariat.
-                    </p>
-                </div>
-
-                <!-- Profile 3 -->
-                <div class="bg-navy-800/50 backdrop-blur-sm border border-white/10 p-8 rounded hover:bg-navy-800 transition duration-300 reveal" style="transition-delay: 200ms;">
-                    <div class="w-12 h-12 bg-navy-950 border border-gold-500/30 rounded flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(212,175,55,0.1)]">
-                        <span class="font-serif text-gold-400 font-bold text-xl">R</span>
-                    </div>
-                    <h3 class="text-white font-serif text-lg font-bold mb-2">Regulatory Affairs</h3>
-                    <p class="text-gold-500 text-xs tracking-widest uppercase mb-4">Government Rel. & Field Exec</p>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Ahli taktis lapangan. Mengomandoi komunikasi dengan otoritas pemerintahan daerah, penyelesaian izin teknis konstruksi (PBG/ITR), serta manajemen penyelesaian isu sosio-kultural lokal.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-white border-b border-gray-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl font-serif text-navy-900 font-bold">Engagement Protocol</h2>
-                <p class="text-gray-500 mt-4 text-sm font-medium">Langkah eksklusif untuk menjamin kerahasiaan dan ketepatan eksekusi bisnis Anda.</p>
-            </div>
-
-            <div class="relative border-l-2 border-gold-200 ml-3 md:ml-1/2 reveal">
-                <!-- Step 1 -->
-                <div class="mb-12 relative pl-8 md:pl-0">
-                    <div class="absolute -left-10 md:left-1/2 md:-ml-4 w-8 h-8 rounded-full bg-navy-900 text-white flex items-center justify-center border-4 border-white font-bold z-10 shadow">1</div>
-                    <div class="md:w-1/2 md:pr-12 md:text-right">
-                        <h4 class="text-lg font-bold text-navy-900 mb-1">Initial Discovery</h4>
-                        <p class="text-gray-600 text-sm">Sesi konsultasi privat untuk menyaring visi, kelayakan lokasi, dan proyeksi nilai investasi Anda.</p>
-                    </div>
-                </div>
-                <!-- Step 2 -->
-                <div class="mb-12 relative pl-8 md:pl-0">
-                    <div class="absolute -left-10 md:left-1/2 md:-ml-4 w-8 h-8 rounded-full bg-gold-500 text-white flex items-center justify-center border-4 border-white font-bold z-10 shadow">2</div>
-                    <div class="md:w-1/2 md:pl-12 md:ml-auto">
-                        <h4 class="text-lg font-bold text-navy-900 mb-1">NDA Activation</h4>
-                        <p class="text-gray-600 text-sm">Penandatanganan <em>Non-Disclosure Agreement</em> untuk membuka portofolio rahasia (*The Black Book*) dan detail penawaran firma.</p>
-                    </div>
-                </div>
-                <!-- Step 3 -->
-                <div class="relative pl-8 md:pl-0">
-                    <div class="absolute -left-10 md:left-1/2 md:-ml-4 w-8 h-8 rounded-full bg-navy-900 text-white flex items-center justify-center border-4 border-white font-bold z-10 shadow">3</div>
-                    <div class="md:w-1/2 md:pr-12 md:text-right">
-                        <h4 class="text-lg font-bold text-navy-900 mb-1">Bespoke Execution</h4>
-                        <p class="text-gray-600 text-sm">Tim formasi kami mulai mengunci lahan, memproses entitas hukum, dan mengurus izin konstruksi secara simultan.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-24 bg-gray-50 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col lg:flex-row reveal">
-                <!-- Contact Info -->
-                <div class="lg:w-2/5 bg-navy-900 p-10 text-white relative">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
-                    <h3 class="text-3xl font-serif font-bold mb-2">Book a Briefing.</h3>
-                    <p class="text-gray-400 text-sm mb-10 font-light">Jadwalkan pertemuan privat dengan *Lead Strategist* kami untuk membahas portofolio khusus dan arsitektur bisnis Anda.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1.5 text-gold-400 mr-4 w-5 text-center"></i>
-                            <div>
-                                <p class="text-sm font-semibold">Headquarters</p>
-                                <p class="text-xs text-gray-400 mt-1">Jl. Sunset Road, Seminyak<br>Bali, Indonesia 80361</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-envelope text-gold-400 mr-4 w-5 text-center"></i>
-                            <div>
-                                <p class="text-sm font-semibold">Corporate Email</p>
-                                <p class="text-xs text-gray-400 mt-1">partners@equitashub.com</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fab fa-whatsapp text-gold-400 mr-4 w-5 text-center text-lg"></i>
-                            <div>
-                                <p class="text-sm font-semibold">Secure Line</p>
-                                <p class="text-xs text-gray-400 mt-1">+62 811 0000 0000</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Form -->
-                <div class="lg:w-3/5 p-10 lg:p-12">
-                    <form onsubmit="event.preventDefault(); document.getElementById('success-msg').classList.remove('hidden');" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-2">Nama Lengkap / Representatif</label>
-                                <input type="text" required class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded focus:ring-gold-500 focus:border-gold-500 block p-3 text-sm transition-colors" placeholder="John Doe">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-2">Nama Perusahaan (Jika Ada)</label>
-                                <input type="text" class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded focus:ring-gold-500 focus:border-gold-500 block p-3 text-sm transition-colors" placeholder="Holding Corp">
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-2">Email Bisnis</label>
-                                <input type="email" required class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded focus:ring-gold-500 focus:border-gold-500 block p-3 text-sm transition-colors" placeholder="john@company.com">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-2">Estimasi Nilai Investasi</label>
-                                <select class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded focus:ring-gold-500 focus:border-gold-500 block p-3 text-sm transition-colors">
-                                    <option>Select Range...</option>
-                                    <option>USD $100k - $500k</option>
-                                    <option>USD $500k - $1M</option>
-                                    <option>USD $1M - $5M</option>
-                                    <option>Above USD $5M</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-2">Fokus Utama Bisnis</label>
-                            <textarea rows="3" class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded focus:ring-gold-500 focus:border-gold-500 block p-3 text-sm transition-colors resize-none" placeholder="Ceritakan secara singkat area yang ingin didiskusikan..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-navy-900 hover:bg-navy-800 text-white font-bold py-4 px-4 rounded transition-colors text-sm tracking-widest uppercase mt-4">
-                            Request Private Briefing
+                    <!-- Hero Call-To-Action Buttons -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#ventures" class="px-7 py-3.5 rounded-xl font-heading font-bold text-sm tracking-wide text-navy-950 bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 hover:from-gold-300 hover:to-gold-500 shadow-xl shadow-gold-500/20 hover:shadow-gold-500/40 transition-all duration-300 flex items-center gap-3">
+                            <span>Explore Ventures</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <button onclick="openModal('cvModal')" class="px-7 py-3.5 rounded-xl font-heading font-semibold text-sm tracking-wide text-slate-200 glass-card hover:bg-navy-800 hover:text-gold-400 border border-slate-700 hover:border-gold-500/50 transition-all duration-300 flex items-center gap-2">
+                            <i class="fa-solid fa-file-pdf text-gold-400"></i>
+                            <span>Download CV Brief</span>
                         </button>
+                        <a href="#contact" class="px-6 py-3.5 rounded-xl font-heading font-semibold text-sm tracking-wide text-slate-300 hover:text-white transition-colors flex items-center gap-2">
+                            <i class="fa-regular fa-envelope text-gold-400"></i>
+                            <span>Contact Ferri</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Card Column -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Background Frame Glow -->
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-gold-500 to-amber-700 rounded-3xl blur-lg opacity-30 animate-pulse"></div>
                         
-                        <div id="success-msg" class="hidden text-center mt-4 p-3 bg-green-50 text-green-800 text-sm rounded border border-green-200">
-                            Terima kasih. Tim strategi kami akan segera menghubungi Anda untuk mengatur jadwal NDA.
+                        <!-- Executive Profile Summary Card -->
+                        <div class="relative glass-card rounded-3xl p-8 border border-slate-700/80 space-y-6">
+                            <div class="flex items-center gap-5">
+                                <div class="relative">
+                                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-gold-600 via-amber-400 to-gold-300 p-0.5 shadow-xl">
+                                        <div class="w-full h-full bg-navy-950 rounded-[14px] flex items-center justify-center overflow-hidden">
+                                            <span class="font-heading text-3xl font-black text-gold-400">FS</span>
+                                        </div>
+                                    </div>
+                                    <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-emerald-500 border-2 border-navy-950 flex items-center justify-center text-[10px] text-white" title="Active Strategic Advisor">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-heading font-bold text-white">I Made Agus Ferri Saga</h3>
+                                    <p class="text-xs font-semibold text-gold-400 tracking-wider uppercase mt-0.5">Studies in Law & Informatics</p>
+                                    <p class="text-xs text-slate-400 mt-1">Denpasar & Tabanan, Bali, ID</p>
+                                </div>
+                            </div>
+
+                            <hr class="border-slate-800">
+
+                            <!-- Key Pillars Grid -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="p-3.5 rounded-xl bg-navy-900/80 border border-slate-800">
+                                    <p class="text-xs text-slate-400">Legal Studies</p>
+                                    <p class="text-sm font-semibold text-slate-200 mt-1">PMA & FDI Compliance</p>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-navy-900/80 border border-slate-800">
+                                    <p class="text-xs text-slate-400">Tech Studies</p>
+                                    <p class="text-sm font-semibold text-slate-200 mt-1">Modern Web & Systems</p>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-navy-900/80 border border-slate-800">
+                                    <p class="text-xs text-slate-400">Consulting</p>
+                                    <p class="text-sm font-semibold text-slate-200 mt-1">LIGER Consulting</p>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-navy-900/80 border border-slate-800">
+                                    <p class="text-xs text-slate-400">Digital Agency</p>
+                                    <p class="text-sm font-semibold text-slate-200 mt-1">Segara Digital</p>
+                                </div>
+                            </div>
+
+                            <!-- Executive Quote -->
+                            <div class="p-4 rounded-xl bg-gradient-to-r from-gold-500/10 to-transparent border-l-2 border-gold-500 text-xs italic text-slate-300">
+                                "Synthesizing executive experience, legal compliance, and digital engineering to build resilient ventures across Indonesia."
+                            </div>
                         </div>
-                    </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                <!-- Metric 1 -->
+                <div class="glass-card glass-card-hover p-6 rounded-2xl border border-slate-800 text-center group">
+                    <div class="text-3xl sm:text-4xl font-heading font-black text-gold-400 group-hover:scale-110 transition-transform">
+                        14+
+                    </div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-300 mt-2">
+                        Years Executive Leadership
+                    </div>
+                </div>
+                <!-- Metric 2 -->
+                <div class="glass-card glass-card-hover p-6 rounded-2xl border border-slate-800 text-center group">
+                    <div class="text-3xl sm:text-4xl font-heading font-black text-gold-400 group-hover:scale-110 transition-transform">
+                        Active
+                    </div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-300 mt-2">
+                        Law & Tech Studies
+                    </div>
+                </div>
+                <!-- Metric 3 -->
+                <div class="glass-card glass-card-hover p-6 rounded-2xl border border-slate-800 text-center group">
+                    <div class="text-3xl sm:text-4xl font-heading font-black text-gold-400 group-hover:scale-110 transition-transform">
+                        2x
+                    </div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-300 mt-2">
+                        Founder (LIGER & Segara Digital)
+                    </div>
+                </div>
+                <!-- Metric 4 -->
+                <div class="glass-card glass-card-hover p-6 rounded-2xl border border-slate-800 text-center group">
+                    <div class="text-3xl sm:text-4xl font-heading font-black text-gold-400 group-hover:scale-110 transition-transform">
+                        100%
+                    </div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-300 mt-2">
+                        Anti-Nominee Compliance Focus
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="py-20 relative z-10 border-t border-slate-800/80 bg-navy-950/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+                <div>
+                    <span class="text-gold-400 font-semibold text-xs tracking-widest uppercase block mb-2">Executive Overview</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">
+                        Interdisciplinary Leadership for Strategic Growth
+                    </h2>
+                </div>
+                <div class="h-1 w-24 bg-gradient-to-r from-gold-400 to-transparent rounded-full hidden md:block"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+                <!-- Left Bio Content -->
+                <div class="lg:col-span-7 space-y-6 text-slate-300 leading-relaxed font-light">
+                    <p class="text-lg text-white font-normal">
+                        <strong>I Made Agus Ferri Saga</strong> is a seasoned Business Development Leader, Digital Strategist, and Founder based in Bali, Indonesia. Over more than 14 years, he has forged a distinguished executive career grounded in real commercial execution and strategic corporate direction.
+                    </p>
+                    <p>
+                        He possesses an <strong>Interdisciplinary Legal & Digital Technology Background</strong>, combining extensive hands-on management experience with ongoing studies in Law at <strong>Universitas Terbuka Denpasar</strong> and Informatics Engineering at <strong>INSTIKI Bali</strong>.
+                    </p>
+                    <p>
+                        His professional foundation is built on practical industry leadership through <strong>LIGER Consulting</strong>, <strong>Segara Digital</strong>, and <strong>PT Safaga Apta Prapti</strong>, backed by an early multimedia vocational background from <strong>SMK Negeri 1 Denpasar</strong>. This unique combination allows him to seamlessly navigate complex PT PMA investment setups, property due diligence, and full-scale modern digital technologies.
+                    </p>
+
+                    <!-- Core Philosophy Callout -->
+                    <div class="p-6 rounded-2xl glass-card border border-gold-500/20 my-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-compass-drafting text-gold-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-white text-base">Core Philosophy</h4>
+                                <p class="text-xs text-slate-300 mt-1 leading-normal">
+                                    "Bridging real-world corporate experience with legal compliance and digital innovation to create sustainable value for foreign investors and local enterprises alike."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Academic & Strategic Pillar Cards -->
+                <div class="lg:col-span-5 space-y-4">
+                    <!-- Pillar 1 -->
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800 hover:border-gold-500/40 transition-all">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-navy-800 flex items-center justify-center text-gold-400">
+                                <i class="fa-solid fa-scale-balanced text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-white text-sm">Legal & Structural Advisory</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Law Studies | Anti-Nominee PT PMA & Due Diligence</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800 hover:border-gold-500/40 transition-all">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-navy-800 flex items-center justify-center text-gold-400">
+                                <i class="fa-solid fa-code text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-white text-sm">Digital Engineering & Web Tech</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Informatics Studies | Laravel, UI/UX & Custom Web Portals</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800 hover:border-gold-500/40 transition-all">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-navy-800 flex items-center justify-center text-gold-400">
+                                <i class="fa-solid fa-chart-line text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-white text-sm">Executive Growth Strategy</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">14+ Years Real Managerial & Executive Direction</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 4 -->
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800 hover:border-gold-500/40 transition-all">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-navy-800 flex items-center justify-center text-gold-400">
+                                <i class="fa-solid fa-photo-film text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-white text-sm">Multimedia & Digital Branding</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Vocational Multimedia (SMK Negeri 1 Denpasar) | SEO</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer with Disclaimer -->
-    <footer class="bg-navy-950 pt-16 pb-8 border-t border-gray-800">
+    <section id="expertise" class="py-20 relative z-10 border-t border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center mb-10 border-b border-gray-800 pb-10">
-                <div class="flex items-center mb-6 md:mb-0">
-                    <div class="w-8 h-8 border border-gold-500 flex items-center justify-center rounded-sm mr-3">
-                        <span class="font-serif font-bold text-gold-500 text-sm">E</span>
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 font-semibold text-xs tracking-widest uppercase block mb-2">Core Competencies</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">Areas of Executive Expertise</h2>
+                <p class="text-slate-400 text-sm mt-3 font-light">
+                    An integrated spectrum of legal, commercial, technical, and digital growth skills designed to elevate foreign investments and corporate enterprises.
+                </p>
+            </div>
+
+            <!-- Grid Container -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Skill Card 1 -->
+                <div class="glass-card glass-card-hover p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-5">
+                            <i class="fa-solid fa-chart-pie text-xl"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-white mb-2">Business Development & Growth Strategy</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Formulating commercial expansion plans, revenue optimization, client acquisition channels, and strategic cross-border partnerships.
+                        </p>
                     </div>
-                    <span class="font-serif font-bold text-white tracking-widest uppercase text-base">Equitas</span>
+                    <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800">
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-gold-400">PMA Expansion</span>
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-slate-300">Revenue Models</span>
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-slate-300">JV Strategy</span>
+                    </div>
                 </div>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-500 hover:text-gold-400 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
-                    <a href="#" class="text-gray-500 hover:text-gold-400 transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+
+                <!-- Skill Card 2 -->
+                <div class="glass-card glass-card-hover p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-5">
+                            <i class="fa-solid fa-gavel text-xl"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-white mb-2">Corporate & FDI Structuring</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Setup of PT PMA companies, foreign investment licenses, BKPM compliance, 100% anti-nominee shareholder frameworks, and immigration advisory.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800">
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-gold-400">PT PMA Setup</span>
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-slate-300">Anti-Nominee</span>
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-slate-300">OSS RBA</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="glass-card glass-card-hover p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-5">
+                            <i class="fa-solid fa-laptop-code text-xl"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-white mb-2">Web & Custom App Development</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Full-stack web solutions utilizing modern frameworks (Laravel, Tailwind, JS), custom API integrations, and scalable enterprise portals.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800">
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-gold-400">Laravel / PHP</span>
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-slate-300">Tailwind CSS</span>
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-slate-300">Web Systems</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 4 -->
+                <div class="glass-card glass-card-hover p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-5">
+                            <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-white mb-2">UI/UX & Digital Branding</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Conceptualizing executive visual identities, intuitive user interface design, logo suites, and corporate brand positioning (via Segara Digital).
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800">
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-gold-400">UI/UX Layouts</span>
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-slate-300">Brand Systems</span>
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-slate-300">Segara Tech</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 5 -->
+                <div class="glass-card glass-card-hover p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-5">
+                            <i class="fa-solid fa-building-shield text-xl"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-white mb-2">Property & Land Due Diligence</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Rigorous verification of certificate zoning (ITR), Hak Pakai/Hak Sewa lease titles, PBG building permits, and SPV/JV models for developers.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800">
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-gold-400">ITR Zoning</span>
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-slate-300">PBG Permits</span>
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-slate-300">LIGER Legal</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card 6 -->
+                <div class="glass-card glass-card-hover p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-5">
+                            <i class="fa-solid fa-bullhorn text-xl"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-white mb-2">Digital Marketing, SEO & Growth Ops</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Technical SEO audits, search engine optimization campaigns, conversion funnel engineering, and data-driven marketing operations.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800">
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-gold-400">SEO Audits</span>
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-slate-300">Content Strategy</span>
+                        <span class="px-2.5 py-1 rounded-md bg-navy-800 text-[11px] font-medium text-slate-300">Funnels</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="ventures" class="py-20 relative z-10 border-t border-slate-800/80 bg-navy-950/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
+                <div>
+                    <span class="text-gold-400 font-semibold text-xs tracking-widest uppercase block mb-2">Entrepreneurial Footprint</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">Primary Ventures & Initiatives</h2>
+                </div>
+                <p class="text-xs text-slate-400 max-w-md">
+                    Directing active business entities across strategic legal consulting, full-scale digital technologies, and executive operational management.
+                </p>
+            </div>
+
+            <!-- Venture Cards Grid -->
+            <div class="grid lg:grid-cols-3 gap-8">
+
+                <!-- Venture Card 1: LIGER Consulting -->
+                <div class="glass-card glass-card-hover rounded-3xl p-8 border border-slate-800 flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-full blur-2xl group-hover:bg-gold-500/20 transition-all"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[11px] font-semibold uppercase tracking-wider">
+                                Founder & Lead Strategist
+                            </span>
+                            <span class="text-xs text-slate-400 font-mono">Est. 2026</span>
+                        </div>
+
+                        <h3 class="font-heading text-2xl font-bold text-white mb-2 group-hover:text-gold-400 transition-colors">
+                            LIGER Business & Legal Consulting
+                        </h3>
+                        <p class="text-xs font-semibold text-slate-400 mb-4 uppercase tracking-wider">
+                            Legal & Investment Firm (Bali & Indonesia)
+                        </p>
+
+                        <p class="text-slate-300 text-xs leading-relaxed mb-6 font-light">
+                            Integrated strategic legal consulting designed for foreign investors, real estate developers, and offshore businesses entering Indonesia. Specializing in legal land due diligence, PBG building permits, SPV/JV models, and 100% compliant anti-nominee corporate structures.
+                        </p>
+
+                        <!-- Key Pillars List -->
+                        <div class="space-y-2 mb-8">
+                            <div class="flex items-center gap-2 text-xs text-slate-300">
+                                <i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i>
+                                <span>PT PMA Setup & OSS RBA Foreign Direct Investment</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-300">
+                                <i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i>
+                                <span>Comprehensive Land Due Diligence & Title Verification</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-300">
+                                <i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i>
+                                <span>100% Anti-Nominee Structure Safeguards</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-300">
+                                <i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i>
+                                <span>Building Licensing (PBG / SLF) & Tax Planning</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('ligerModal')" class="w-full py-3 rounded-xl bg-navy-800 hover:bg-gold-500 hover:text-navy-950 text-slate-200 text-xs font-heading font-bold uppercase tracking-wider border border-slate-700 hover:border-gold-400 transition-all text-center">
+                        View Venture Brief
+                    </button>
+                </div>
+
+                <!-- Venture Card 2: Segara Digital -->
+                <div class="glass-card glass-card-hover rounded-3xl p-8 border border-slate-800 flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/20 transition-all"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[11px] font-semibold uppercase tracking-wider">
+                                Founder & Tech Lead
+                            </span>
+                            <span class="text-xs text-slate-400 font-mono">Est. 2026</span>
+                        </div>
+
+                        <h3 class="font-heading text-2xl font-bold text-white mb-2 group-hover:text-gold-400 transition-colors">
+                            Segara Digital
+                        </h3>
+                        <p class="text-xs font-semibold text-slate-400 mb-4 uppercase tracking-wider">
+                            Independent Tech & Web Consultancy
+                        </p>
+
+                        <p class="text-slate-300 text-xs leading-relaxed mb-6 font-light">
+                            High-end digital agency and web architecture consultancy. Delivering robust custom web application development, responsive corporate portals, Laravel frameworks, intuitive UI/UX design, SEO architecture, and brand identity systems for high-growth ventures.
+                        </p>
+
+                        <!-- Key Pillars List -->
+                        <div class="space-y-2 mb-8">
+                            <div class="flex items-center gap-2 text-xs text-slate-300">
+                                <i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i>
+                                <span>Full-Stack Modern Web & Web Application Development</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-300">
+                                <i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i>
+                                <span>Laravel Ecosystem & Tailored Backend Solutions</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-300">
+                                <i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i>
+                                <span>Executive UI/UX Wireframing & Responsive Styling</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-300">
+                                <i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i>
+                                <span>SEO Audits & Digital Marketing Funnel Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('segaraModal')" class="w-full py-3 rounded-xl bg-navy-800 hover:bg-gold-500 hover:text-navy-950 text-slate-200 text-xs font-heading font-bold uppercase tracking-wider border border-slate-700 hover:border-gold-400 transition-all text-center">
+                        View Technical Stack
+                    </button>
+                </div>
+
+                <!-- Venture Card 3: PT Safaga Apta Prapti -->
+                <div class="glass-card glass-card-hover rounded-3xl p-8 border border-slate-800 flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-full blur-2xl group-hover:bg-yellow-500/20 transition-all"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[11px] font-semibold uppercase tracking-wider">
+                                Director
+                            </span>
+                            <span class="text-xs text-slate-400 font-mono">2025 - Present</span>
+                        </div>
+
+                        <h3 class="font-heading text-2xl font-bold text-white mb-2 group-hover:text-gold-400 transition-colors">
+                            PT Safaga Apta Prapti
+                        </h3>
+                        <p class="text-xs font-semibold text-slate-400 mb-4 uppercase tracking-wider">
+                            Corporate Direction & Executive Operations
+                        </p>
+
+                        <p class="text-slate-300 text-xs leading-relaxed mb-6 font-light">
+                            Spearheading corporate operational alignment, technology-driven business development, risk management, and strategic partner negotiations. Ensuring smooth organizational performance and sustainable revenue scaling across enterprise operations.
+                        </p>
+
+                        <!-- Key Pillars List -->
+                        <div class="space-y-2 mb-8">
+                            <div class="flex items-center gap-2 text-xs text-slate-300">
+                                <i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i>
+                                <span>Executive Corporate Direction & Executive Operations</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-300">
+                                <i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i>
+                                <span>Strategic Business Development & Scalability Plans</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-300">
+                                <i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i>
+                                <span>Regulatory & Operations Compliance Management</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-300">
+                                <i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i>
+                                <span>High-Value Stakeholder & Investor Governance</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('safagaModal')" class="w-full py-3 rounded-xl bg-navy-800 hover:bg-gold-500 hover:text-navy-950 text-slate-200 text-xs font-heading font-bold uppercase tracking-wider border border-slate-700 hover:border-gold-400 transition-all text-center">
+                        View Directorship Brief
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="py-20 relative z-10 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-gold-400 font-semibold text-xs tracking-widest uppercase block mb-2">Track Record</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">Professional Career Journey</h2>
+                <p class="text-slate-400 text-sm mt-3 font-light">
+                    14+ years of real leadership progression across business management, quality systems, R&D, and technology ventures.
+                </p>
+
+                <!-- Interactive Timeline Filter Tabs -->
+                <div class="flex flex-wrap justify-center gap-2 mt-8">
+                    <button onclick="filterTimeline('all')" id="btn-all" class="timeline-btn active px-5 py-2 rounded-xl text-xs font-heading font-bold uppercase tracking-wider bg-gold-500 text-navy-950 transition-all">
+                        All Roles
+                    </button>
+                    <button onclick="filterTimeline('leadership')" id="btn-leadership" class="timeline-btn px-5 py-2 rounded-xl text-xs font-heading font-bold uppercase tracking-wider glass-card text-slate-300 hover:text-gold-400 border border-slate-700 transition-all">
+                        Leadership & Executive
+                    </button>
+                    <button onclick="filterTimeline('tech')" id="btn-tech" class="timeline-btn px-5 py-2 rounded-xl text-xs font-heading font-bold uppercase tracking-wider glass-card text-slate-300 hover:text-gold-400 border border-slate-700 transition-all">
+                        Digital & Tech
+                    </button>
                 </div>
             </div>
-            
-            <div class="text-center text-xs text-gray-500 max-w-4xl mx-auto leading-relaxed">
-                <p class="font-bold text-gray-400 mb-2">IMPORTANT LEGAL DISCLAIMER</p>
-                <p>Equitas Strategic Hub bertindak secara eksklusif sebagai Firma Konsultan Hukum Korporasi, Arsitektur Bisnis, dan Pengembang Properti Prosedural. Kami beroperasi secara penuh pada ranah <strong>Non-Litigasi</strong>. Segala bentuk representasi pengadilan akan dirujuk kepada mitra Advokat independen berlisensi sesuai dengan perundang-undangan Republik Indonesia. Perusahaan kami patuh sepenuhnya pada Anti-Nominee Act.</p>
-                <p class="mt-6">&copy; 2026 Equitas Strategic Partners. All rights reserved. Confidential Property.</p>
+
+            <!-- Timeline Container -->
+            <div class="relative timeline-line max-w-4xl mx-auto pt-6">
+
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item leadership tech relative mb-12 flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/2 md:pr-10 md:text-right mb-4 md:mb-0">
+                        <span class="text-xs font-bold text-gold-400 font-mono tracking-wider">2026 - PRESENT</span>
+                        <h3 class="font-heading text-xl font-bold text-white mt-1">Founder</h3>
+                        <p class="text-xs font-semibold text-slate-400">LIGER Business & Legal Consulting</p>
+                    </div>
+                    <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-navy-950 border-2 border-gold-400 flex items-center justify-center text-gold-400 z-10 shadow-lg shadow-gold-500/20">
+                        <i class="fa-solid fa-briefcase text-sm"></i>
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-10 pl-14">
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800">
+                            <p class="text-xs text-slate-300 leading-relaxed font-light">
+                                Directing legal advisory, land due diligence, anti-nominee setup, and PMA foreign corporate architecture across Bali & Indonesia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item tech relative mb-12 flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/2 md:pr-10 md:text-right mb-4 md:mb-0 order-1 md:order-1">
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 md:block hidden">
+                            <p class="text-xs text-slate-300 leading-relaxed font-light">
+                                Providing web app engineering, Laravel solutions, UI/UX design, technical SEO audits, and enterprise digital strategy.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-navy-950 border-2 border-gold-400 flex items-center justify-center text-gold-400 z-10 shadow-lg shadow-gold-500/20">
+                        <i class="fa-solid fa-code text-sm"></i>
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-10 pl-14 order-2 md:order-2">
+                        <span class="text-xs font-bold text-gold-400 font-mono tracking-wider">2026 - PRESENT</span>
+                        <h3 class="font-heading text-xl font-bold text-white mt-1">Independent Tech Consultant</h3>
+                        <p class="text-xs font-semibold text-slate-400 mb-2">Segara Digital</p>
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 md:hidden">
+                            <p class="text-xs text-slate-300 leading-relaxed font-light">
+                                Providing web app engineering, Laravel solutions, UI/UX design, technical SEO audits, and enterprise digital strategy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item leadership relative mb-12 flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/2 md:pr-10 md:text-right mb-4 md:mb-0">
+                        <span class="text-xs font-bold text-gold-400 font-mono tracking-wider">2025 - PRESENT</span>
+                        <h3 class="font-heading text-xl font-bold text-white mt-1">Director</h3>
+                        <p class="text-xs font-semibold text-slate-400">PT Safaga Apta Prapti</p>
+                    </div>
+                    <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-navy-950 border-2 border-gold-400 flex items-center justify-center text-gold-400 z-10 shadow-lg shadow-gold-500/20">
+                        <i class="fa-solid fa-user-tie text-sm"></i>
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-10 pl-14">
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800">
+                            <p class="text-xs text-slate-300 leading-relaxed font-light">
+                                Leading executive corporate operations, high-level investor relations, strategic growth planning, and enterprise governance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item leadership relative mb-12 flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/2 md:pr-10 md:text-right mb-4 md:mb-0 order-1 md:order-1">
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 md:block hidden">
+                            <p class="text-xs text-slate-300 leading-relaxed font-light">
+                                Drove business expansion, client acquisition, strategic partnership management, legal compliance oversight, and revenue streams.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-navy-950 border-2 border-slate-600 flex items-center justify-center text-slate-400 z-10">
+                        <i class="fa-solid fa-chart-line text-sm"></i>
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-10 pl-14 order-2 md:order-2">
+                        <span class="text-xs font-bold text-gold-400 font-mono tracking-wider">2022 - 2025</span>
+                        <h3 class="font-heading text-xl font-bold text-white mt-1">Business Development Manager</h3>
+                        <p class="text-xs font-semibold text-slate-400 mb-2">Safaga Indonesia</p>
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 md:hidden">
+                            <p class="text-xs text-slate-300 leading-relaxed font-light">
+                                Drove business expansion, client acquisition, strategic partnership management, legal compliance oversight, and revenue streams.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5 -->
+                <div class="timeline-item leadership relative mb-12 flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/2 md:pr-10 md:text-right mb-4 md:mb-0">
+                        <span class="text-xs font-bold text-gold-400 font-mono tracking-wider">2018 - 2022</span>
+                        <h3 class="font-heading text-xl font-bold text-white mt-1">General Manager</h3>
+                        <p class="text-xs font-semibold text-slate-400">Bali Business Broker</p>
+                    </div>
+                    <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-navy-950 border-2 border-slate-600 flex items-center justify-center text-slate-400 z-10">
+                        <i class="fa-solid fa-handshake text-sm"></i>
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-10 pl-14">
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800">
+                            <p class="text-xs text-slate-300 leading-relaxed font-light">
+                                Managed full business brokerage operations, foreign asset sales due diligence, cross-border investor matching, and corporate deal structuring.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 6 -->
+                <div class="timeline-item leadership relative mb-12 flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/2 md:pr-10 md:text-right mb-4 md:mb-0 order-1 md:order-1">
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 md:block hidden">
+                            <p class="text-xs text-slate-300 leading-relaxed font-light">
+                                Overhauled institutional quality standards, operational compliance frameworks, customer satisfaction systems, and team performance metrics.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-navy-950 border-2 border-slate-600 flex items-center justify-center text-slate-400 z-10">
+                        <i class="fa-solid fa-award text-sm"></i>
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-10 pl-14 order-2 md:order-2">
+                        <span class="text-xs font-bold text-gold-400 font-mono tracking-wider">2015 - 2018</span>
+                        <h3 class="font-heading text-xl font-bold text-white mt-1">Operational & Quality Manager</h3>
+                        <p class="text-xs font-semibold text-slate-400 mb-2">Royal London College</p>
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 md:hidden">
+                            <p class="text-xs text-slate-300 leading-relaxed font-light">
+                                Overhauled institutional quality standards, operational compliance frameworks, customer satisfaction systems, and team performance metrics.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 7 -->
+                <div class="timeline-item tech relative mb-12 flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/2 md:pr-10 md:text-right mb-4 md:mb-0">
+                        <span class="text-xs font-bold text-gold-400 font-mono tracking-wider">2014 - 2015</span>
+                        <h3 class="font-heading text-xl font-bold text-white mt-1">R&D Manager</h3>
+                        <p class="text-xs font-semibold text-slate-400">Best English</p>
+                    </div>
+                    <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-navy-950 border-2 border-slate-600 flex items-center justify-center text-slate-400 z-10">
+                        <i class="fa-solid fa-flask text-sm"></i>
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-10 pl-14">
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800">
+                            <p class="text-xs text-slate-300 leading-relaxed font-light">
+                                Headed curriculum research, modern teaching technology implementation, and digital courseware development.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 8 -->
+                <div class="timeline-item tech relative mb-12 flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/2 md:pr-10 md:text-right mb-4 md:mb-0 order-1 md:order-1">
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 md:block hidden">
+                            <p class="text-xs text-slate-300 leading-relaxed font-light">
+                                Led research initiatives, product testing, educational media development, and digital system integration.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-navy-950 border-2 border-slate-600 flex items-center justify-center text-slate-400 z-10">
+                        <i class="fa-solid fa-microscope text-sm"></i>
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-10 pl-14 order-2 md:order-2">
+                        <span class="text-xs font-bold text-gold-400 font-mono tracking-wider">2014</span>
+                        <h3 class="font-heading text-xl font-bold text-white mt-1">Chief R&D</h3>
+                        <p class="text-xs font-semibold text-slate-400 mb-2">Banyan International</p>
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 md:hidden">
+                            <p class="text-xs text-slate-300 leading-relaxed font-light">
+                                Led research initiatives, product testing, educational media development, and digital system integration.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 9 -->
+                <div class="timeline-item tech relative flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/2 md:pr-10 md:text-right mb-4 md:mb-0">
+                        <span class="text-xs font-bold text-gold-400 font-mono tracking-wider">2011 - 2013</span>
+                        <h3 class="font-heading text-xl font-bold text-white mt-1">Marketing Manager</h3>
+                        <p class="text-xs font-semibold text-slate-400">Wave Hunter Bali</p>
+                    </div>
+                    <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-navy-950 border-2 border-slate-600 flex items-center justify-center text-slate-400 z-10">
+                        <i class="fa-solid fa-bullhorn text-sm"></i>
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-10 pl-14">
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800">
+                            <p class="text-xs text-slate-300 leading-relaxed font-light">
+                                Managed promotional campaigns, customer experience channels, branding, and local digital marketing initiatives.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-20 relative z-10 border-t border-slate-800/80 bg-navy-950/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 font-semibold text-xs tracking-widest uppercase block mb-2">Academic Foundation</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">Education & Studies</h2>
+                <p class="text-slate-400 text-sm mt-3 font-light">
+                    Interdisciplinary academic pursuits unifying legal scholarship and informatics engineering with vocational roots.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Education Card 1 -->
+                <div class="glass-card glass-card-hover rounded-3xl p-8 border border-slate-800 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-6">
+                            <i class="fa-solid fa-graduation-cap text-2xl"></i>
+                        </div>
+                        <span class="text-xs font-bold font-mono text-gold-400 uppercase tracking-widest block mb-1">
+                            Currently Pursuing
+                        </span>
+                        <h3 class="font-heading text-xl font-bold text-white mb-2">
+                            Studies in Law
+                        </h3>
+                        <p class="text-xs font-semibold text-slate-300 mb-4">Universitas Terbuka Denpasar</p>
+                        <p class="text-slate-400 text-xs leading-relaxed font-light">
+                            Active legal studies focusing on Indonesian commercial law, agrarian law & land due diligence, foreign direct investment regulations (PT PMA), contract drafting, and corporate compliance architecture.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs text-slate-400">
+                        <i class="fa-solid fa-spinner text-gold-400 animate-spin"></i>
+                        <span>Legal Studies</span>
+                    </div>
+                </div>
+
+                <!-- Education Card 2 -->
+                <div class="glass-card glass-card-hover rounded-3xl p-8 border border-slate-800 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-6">
+                            <i class="fa-solid fa-microchip text-2xl"></i>
+                        </div>
+                        <span class="text-xs font-bold font-mono text-gold-400 uppercase tracking-widest block mb-1">
+                            Currently Pursuing
+                        </span>
+                        <h3 class="font-heading text-xl font-bold text-white mb-2">
+                            Studies in Informatics Engineering
+                        </h3>
+                        <p class="text-xs font-semibold text-slate-300 mb-4">Institut Bisnis & Teknologi Indonesia (INSTIKI)</p>
+                        <p class="text-slate-400 text-xs leading-relaxed font-light">
+                            Active computer science studies focusing on software engineering, web application development, database architecture, algorithms, UI/UX systems, and modern IT management.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs text-slate-400">
+                        <i class="fa-solid fa-spinner text-gold-400 animate-spin"></i>
+                        <span>Tech Studies</span>
+                    </div>
+                </div>
+
+                <!-- Education Card 3 -->
+                <div class="glass-card glass-card-hover rounded-3xl p-8 border border-slate-800 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-6">
+                            <i class="fa-solid fa-film text-2xl"></i>
+                        </div>
+                        <span class="text-xs font-bold font-mono text-gold-400 uppercase tracking-widest block mb-1">
+                            Vocational Foundation
+                        </span>
+                        <h3 class="font-heading text-xl font-bold text-white mb-2">
+                            Multimedia Specialist
+                        </h3>
+                        <p class="text-xs font-semibold text-slate-300 mb-4">SMK Negeri 1 Denpasar</p>
+                        <p class="text-slate-400 text-xs leading-relaxed font-light">
+                            Practical vocational education in graphic design, audio-video production, web design fundamentals, creative digital branding, and visual user interface media techniques.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs text-slate-400">
+                        <i class="fa-solid fa-award text-gold-400"></i>
+                        <span>Vocational Multimedia Background</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 relative z-10 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info Column -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-gold-400 font-semibold text-xs tracking-widest uppercase block mb-2">Direct Channel</span>
+                        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">Let's Discuss Your Strategy</h2>
+                        <p class="text-slate-300 text-sm mt-3 leading-relaxed font-light">
+                            Whether you require strategic legal advisory for PT PMA establishment, due diligence for Bali property acquisition, or high-performance web development for your brand, reach out directly.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Contact Detail 1 -->
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 flex items-center gap-4 hover:border-gold-500/40 transition-all">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-regular fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <span class="text-[11px] text-slate-400 uppercase tracking-wider block">Direct Email</span>
+                                <a href="mailto:ferrisaga08@gmail.com" class="text-white font-semibold hover:text-gold-400 transition-colors">
+                                    ferrisaga08@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Contact Detail 2 -->
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 flex items-center gap-4 hover:border-gold-500/40 transition-all">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-solid fa-phone text-lg"></i>
+                            </div>
+                            <div>
+                                <span class="text-[11px] text-slate-400 uppercase tracking-wider block">Direct Phone / WhatsApp</span>
+                                <a href="https://wa.me/6287701732224" target="_blank" rel="noopener noreferrer" class="text-white font-semibold hover:text-gold-400 transition-colors">
+                                    +62 877-0173-2224
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Contact Detail 3 -->
+                        <div class="glass-card p-5 rounded-2xl border border-slate-800 flex items-center gap-4 hover:border-gold-500/40 transition-all">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <span class="text-[11px] text-slate-400 uppercase tracking-wider block">Location Headquarters</span>
+                                <span class="text-white font-semibold">
+                                    Tabanan & Denpasar, Bali, Indonesia
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Quick Action Badges -->
+                    <div class="p-6 rounded-2xl glass-card border border-slate-800 flex items-center justify-between">
+                        <div>
+                            <p class="text-xs font-semibold text-white">Need immediate response?</p>
+                            <p class="text-[11px] text-slate-400">Available for confidential WhatsApp briefing</p>
+                        </div>
+                        <a href="https://wa.me/6287701732224?text=Hello%20Ferri,%20I%20would%20like%20to%20discuss%20a%20business%20consultation." target="_blank" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold tracking-wide uppercase flex items-center gap-2 shadow-lg">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form Column -->
+                <div class="lg:col-span-7">
+                    <div class="glass-card rounded-3xl p-8 border border-slate-700/80 relative">
+                        <h3 class="font-heading text-2xl font-bold text-white mb-2">Executive Consultation Brief</h3>
+                        <p class="text-xs text-slate-400 mb-6">
+                            Fill out your project or legal requirements below for direct strategic feedback.
+                        </p>
+
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name *</label>
+                                    <input type="text" required placeholder="e.g. Alexander Wright" class="w-full px-4 py-3 rounded-xl bg-navy-900 border border-slate-700 text-slate-200 text-xs focus:outline-none focus:border-gold-400 transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Company / Entity</label>
+                                    <input type="text" placeholder="e.g. Apex Global Ventures" class="w-full px-4 py-3 rounded-xl bg-navy-900 border border-slate-700 text-slate-200 text-xs focus:outline-none focus:border-gold-400 transition-colors">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
+                                    <input type="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl bg-navy-900 border border-slate-700 text-slate-200 text-xs focus:outline-none focus:border-gold-400 transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Inquiry Domain *</label>
+                                    <select required class="w-full px-4 py-3 rounded-xl bg-navy-900 border border-slate-700 text-slate-200 text-xs focus:outline-none focus:border-gold-400 transition-colors">
+                                        <option value="">Select Primary Requirement</option>
+                                        <option value="pma">PT PMA Setup & Investment Legal</option>
+                                        <option value="due_diligence">Property & Land Due Diligence</option>
+                                        <option value="web_dev">Web & Custom App Development</option>
+                                        <option value="branding">UI/UX Design & Branding (Segara Tech)</option>
+                                        <option value="consulting">Executive BD & Strategic Advisory</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Brief Description *</label>
+                                <textarea rows="4" required placeholder="Provide a brief overview of your project, timeline, or key objectives..." class="w-full px-4 py-3 rounded-xl bg-navy-900 border border-slate-700 text-slate-200 text-xs focus:outline-none focus:border-gold-400 transition-colors resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" id="submitBtn" class="w-full py-4 rounded-xl font-heading font-bold text-xs tracking-wider uppercase text-navy-950 bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 hover:from-gold-300 hover:to-gold-500 shadow-xl shadow-gold-500/20 transition-all active:scale-[0.99] flex items-center justify-center gap-2">
+                                <span>Submit Executive Brief</span>
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
+                            </button>
+                        </form>
+
+                        <!-- Form Submission Success Feedback Overlay -->
+                        <div id="formFeedback" class="hidden absolute inset-0 glass-card rounded-3xl p-8 flex flex-col items-center justify-center text-center space-y-4 animate-fadeIn">
+                            <div class="w-16 h-16 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center text-2xl border border-gold-500">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <h4 class="font-heading font-bold text-2xl text-white">Brief Received</h4>
+                            <p class="text-xs text-slate-300 max-w-sm">
+                                Thank you for getting in touch. I Made Agus Ferri Saga will review your inquiry and respond within 24 business hours.
+                            </p>
+                            <button onclick="resetContactForm()" class="px-6 py-2.5 rounded-xl bg-navy-800 hover:bg-navy-700 text-slate-200 text-xs font-semibold border border-slate-700">
+                                Send Another Message
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 relative z-10 border-t border-slate-800 bg-navy-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Footer Brand -->
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-gold-400 to-gold-700 flex items-center justify-center font-heading font-black text-navy-950 text-sm">
+                        FS
+                    </div>
+                    <div>
+                        <p class="font-heading font-bold text-white text-sm">I MADE AGUS FERRI SAGA</p>
+                        <p class="text-[11px] text-slate-400">Interdisciplinary Legal & Digital Tech Leader</p>
+                    </div>
+                </div>
+
+                <!-- Footer Quick Nav -->
+                <div class="flex items-center gap-6 text-xs text-slate-400 font-medium">
+                    <a href="#about" class="hover:text-gold-400 transition-colors">About</a>
+                    <a href="#expertise" class="hover:text-gold-400 transition-colors">Expertise</a>
+                    <a href="#ventures" class="hover:text-gold-400 transition-colors">Ventures</a>
+                    <a href="#timeline" class="hover:text-gold-400 transition-colors">Experience</a>
+                    <a href="#education" class="hover:text-gold-400 transition-colors">Education</a>
+                    <a href="#contact" class="hover:text-gold-400 transition-colors">Contact</a>
+                </div>
+
+                <!-- Footer Social Icons -->
+                <div class="flex items-center gap-4">
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="w-9 h-9 rounded-xl bg-navy-800 border border-slate-800 hover:border-gold-400 flex items-center justify-center text-slate-300 hover:text-gold-400 transition-all">
+                        <i class="fa-brands fa-linkedin-in text-sm"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" class="w-9 h-9 rounded-xl bg-navy-800 border border-slate-800 hover:border-gold-400 flex items-center justify-center text-slate-300 hover:text-gold-400 transition-all">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                    </a>
+                    <a href="https://wa.me/6287701732224" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Direct" class="w-9 h-9 rounded-xl bg-navy-800 border border-slate-800 hover:border-gold-400 flex items-center justify-center text-slate-300 hover:text-gold-400 transition-all">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                    </a>
+                    <a href="mailto:ferrisaga08@gmail.com" aria-label="Email Direct" class="w-9 h-9 rounded-xl bg-navy-800 border border-slate-800 hover:border-gold-400 flex items-center justify-center text-slate-300 hover:text-gold-400 transition-all">
+                        <i class="fa-regular fa-envelope text-sm"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="border-slate-800 my-8">
+
+            <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <p>&copy; 2026 I Made Agus Ferri Saga. All Rights Reserved.</p>
+                <p class="text-[11px] text-slate-400">Denpasar & Tabanan, Bali, Indonesia</p>
             </div>
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6287701732224?text=Hello%20Ferri,%20I%20would%20like%20to%20discuss%20a%20consultation." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-transform group" title="Direct WhatsApp Line">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="absolute right-16 bg-navy-950 text-white text-xs px-3 py-1.5 rounded-lg border border-slate-800 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl font-medium">
+            Connect via WhatsApp
+        </span>
+    </a>
+
+    <!-- Generic Modal Container -->
+    <div id="modalBackdrop" class="fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        
+        <!-- LIGER Consulting Modal -->
+        <div id="ligerModal" class="modal-content hidden max-w-2xl w-full glass-card rounded-3xl p-8 border border-gold-500/30 relative">
+            <button onclick="closeModal()" aria-label="Close Modal" class="absolute top-6 right-6 text-slate-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-gold-500/20 flex items-center justify-center text-gold-400">
+                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-xl text-white">LIGER Business & Legal Consulting</h3>
+                    <p class="text-xs text-gold-400">Founder & Lead Investment Strategist</p>
+                </div>
+            </div>
+            <div class="space-y-4 text-xs text-slate-300 leading-relaxed max-h-[60vh] overflow-y-auto pr-2">
+                <p>
+                    LIGER Consulting provides integrated, top-tier corporate legal structure and property advisory for foreign investors entering Bali and wider Indonesia.
+                </p>
+                <h4 class="font-bold text-white text-sm pt-2">Key Operational Offerings:</h4>
+                <ul class="list-disc pl-5 space-y-1 text-slate-300">
+                    <li><strong>PT PMA Foreign Direct Investment:</strong> Turnkey setup, OSS RBA sector licensing, NIB, and capital requirements management.</li>
+                    <li><strong>Land & Villa Legal Due Diligence:</strong> Complete title verification, ITR zoning clearance, rights transition (Hak Pakai/Hak Sewa/Leasehold), and seller background verification.</li>
+                    <li><strong>100% Anti-Nominee Compliance:</strong> Formulating legal shareholder structures and agreements that fully protect non-Indonesian investors without illicit proxy agreements.</li>
+                    <li><strong>PBG & Building Permitting:</strong> Guiding commercial projects through building approvals, environmental compliance (SPPL/UKL-UPL), and SLF certification.</li>
+                </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800 flex justify-end gap-3">
+                <button onclick="closeModal()" class="px-5 py-2 rounded-xl bg-navy-800 text-slate-300 text-xs font-semibold">Close</button>
+                <a href="#contact" onclick="closeModal()" class="px-5 py-2 rounded-xl bg-gold-500 text-navy-950 text-xs font-bold uppercase">Inquire Consulting</a>
+            </div>
+        </div>
+
+        <!-- Segara Digital Modal -->
+        <div id="segaraModal" class="modal-content hidden max-w-2xl w-full glass-card rounded-3xl p-8 border border-gold-500/30 relative">
+            <button onclick="closeModal()" aria-label="Close Modal" class="absolute top-6 right-6 text-slate-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-gold-500/20 flex items-center justify-center text-gold-400">
+                    <i class="fa-solid fa-code text-lg"></i>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-xl text-white">Segara Digital</h3>
+                    <p class="text-xs text-gold-400">Founder & Tech Lead</p>
+                </div>
+            </div>
+            <div class="space-y-4 text-xs text-slate-300 leading-relaxed max-h-[60vh] overflow-y-auto pr-2">
+                <p>
+                    Segara Digital bridges executive vision with modern web technologies and full-stack software development tailored for businesses in Indonesia and globally.
+                </p>
+                <h4 class="font-bold text-white text-sm pt-2">Technical Capabilities & Stack:</h4>
+                <ul class="list-disc pl-5 space-y-1 text-slate-300">
+                    <li><strong>Frameworks & Stack:</strong> Modern Laravel, PHP 8+, JavaScript (ES6+), Tailwind CSS, REST APIs.</li>
+                    <li><strong>Corporate Web Portals:</strong> Responsive, fast, highly secure custom web applications built for optimal conversion and executive representation.</li>
+                    <li><strong>UI/UX Design Systems:</strong> Prototyping intuitive user experiences, responsive layouts, and cohesive brand systems.</li>
+                    <li><strong>Technical SEO & Performance:</strong> Comprehensive speed, keyword, and schema audits to rank high in competitive search environments.</li>
+                </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800 flex justify-end gap-3">
+                <button onclick="closeModal()" class="px-5 py-2 rounded-xl bg-navy-800 text-slate-300 text-xs font-semibold">Close</button>
+                <a href="#contact" onclick="closeModal()" class="px-5 py-2 rounded-xl bg-gold-500 text-navy-950 text-xs font-bold uppercase">Start Web Project</a>
+            </div>
+        </div>
+
+        <!-- PT Safaga Modal -->
+        <div id="safagaModal" class="modal-content hidden max-w-2xl w-full glass-card rounded-3xl p-8 border border-gold-500/30 relative">
+            <button onclick="closeModal()" aria-label="Close Modal" class="absolute top-6 right-6 text-slate-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-gold-500/20 flex items-center justify-center text-gold-400">
+                    <i class="fa-solid fa-building text-lg"></i>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-xl text-white">PT Safaga Apta Prapti</h3>
+                    <p class="text-xs text-gold-400">Director</p>
+                </div>
+            </div>
+            <div class="space-y-4 text-xs text-slate-300 leading-relaxed max-h-[60vh] overflow-y-auto pr-2">
+                <p>
+                    Strategic directorship overseeing enterprise operational health, partner ecosystem development, business expansion, and high-level client relations.
+                </p>
+                <h4 class="font-bold text-white text-sm pt-2">Directorship Focus Areas:</h4>
+                <ul class="list-disc pl-5 space-y-1 text-slate-300">
+                    <li>Corporate Governance & Risk Management</li>
+                    <li>Commercial Business Development & Revenue Scaling</li>
+                    <li>Strategic Inter-entity Partnerships & Deal Management</li>
+                </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800 flex justify-end">
+                <button onclick="closeModal()" class="px-5 py-2 rounded-xl bg-navy-800 text-slate-300 text-xs font-semibold">Close</button>
+            </div>
+        </div>
+
+        <!-- Download CV Brief Modal -->
+        <div id="cvModal" class="modal-content hidden max-w-lg w-full glass-card rounded-3xl p-8 border border-gold-500/30 relative text-center">
+            <button onclick="closeModal()" aria-label="Close Modal" class="absolute top-6 right-6 text-slate-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="w-16 h-16 rounded-2xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-3xl mx-auto mb-4 border border-gold-500">
+                <i class="fa-solid fa-file-pdf"></i>
+            </div>
+            <h3 class="font-heading font-bold text-2xl text-white mb-2">Executive CV Brief</h3>
+            <p class="text-xs text-slate-300 mb-6">
+                Download the formal Executive Profile of I Made Agus Ferri Saga.
+            </p>
+            
+            <div class="bg-navy-900/80 p-4 rounded-2xl border border-slate-800 mb-6 text-left space-y-2 text-xs">
+                <div class="flex justify-between">
+                    <span class="text-slate-400">Format:</span>
+                    <span class="text-white font-mono">PDF Executive Profile</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-400">Background:</span>
+                    <span class="text-gold-400">Interdisciplinary Legal & Digital Tech</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-400">Experience:</span>
+                    <span class="text-white">14+ Years Leadership</span>
+                </div>
+            </div>
+
+            <button onclick="simulateCVDownload(event)" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-400 to-gold-600 text-navy-950 font-heading font-bold text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2">
+                <i class="fa-solid fa-download"></i> Download Brief PDF
+            </button>
+        </div>
+
+        <!-- Book Consultation Modal -->
+        <div id="consultationModal" class="modal-content hidden max-w-lg w-full glass-card rounded-3xl p-8 border border-gold-500/30 relative text-center">
+            <button onclick="closeModal()" aria-label="Close Modal" class="absolute top-6 right-6 text-slate-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="w-16 h-16 rounded-2xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-3xl mx-auto mb-4 border border-gold-500">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <h3 class="font-heading font-bold text-2xl text-white mb-2">Book Strategic Consultation</h3>
+            <p class="text-xs text-slate-300 mb-6">
+                Select your preferred consultation format with I Made Agus Ferri Saga.
+            </p>
+
+            <div class="space-y-3 mb-6 text-left">
+                <a href="https://wa.me/6287701732224?text=Hello%20Ferri,%20I%20would%20like%20to%20schedule%20a%201-on-1%20strategy%20consultation." target="_blank" class="glass-card p-4 rounded-xl border border-slate-700 hover:border-gold-400 flex items-center justify-between group">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+                        <div>
+                            <p class="text-xs font-bold text-white group-hover:text-gold-400 transition-colors">Direct WhatsApp Scheduling</p>
+                            <p class="text-[11px] text-slate-400">Instant response for priority inquiries</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-gold-400"></i>
+                </a>
+
+                <a href="#contact" onclick="closeModal()" class="glass-card p-4 rounded-xl border border-slate-700 hover:border-gold-400 flex items-center justify-between group">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-regular fa-envelope text-gold-400 text-xl"></i>
+                        <div>
+                            <p class="text-xs font-bold text-white group-hover:text-gold-400 transition-colors">Detailed Written Briefing</p>
+                            <p class="text-[11px] text-slate-400">Submit form for complex corporate requirements</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-gold-400"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
     <script>
-        // Navbar styling on scroll
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-lg');
-                navbar.classList.replace('bg-transparent', 'glass-nav');
-                navbar.classList.replace('border-transparent', 'border-white/10');
+        // Mobile Navigation Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
             } else {
-                navbar.classList.remove('shadow-lg');
-                // Adjusting based on hero section overlay to keep it readable
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
             }
         });
 
-        // Mobile menu toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
+        // Close mobile drawer on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
         });
 
-        // Simple scroll reveal animation without external libraries
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100; // Trigger point
-                
-                if (!reveals[i].classList.contains('fade-in-up')) {
-                    reveals[i].classList.add('fade-in-up');
-                }
+        // Timeline Filter Functionality
+        function filterTimeline(category) {
+            // Update active tab buttons
+            document.querySelectorAll('.timeline-btn').forEach(btn => {
+                btn.classList.remove('bg-gold-500', 'text-navy-950');
+                btn.classList.add('glass-card', 'text-slate-300');
+            });
 
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("visible");
+            const activeBtn = document.getElementById(`btn-${category}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('glass-card', 'text-slate-300');
+                activeBtn.classList.add('bg-gold-500', 'text-navy-950');
+            }
+
+            // Filter items
+            const items = document.querySelectorAll('.timeline-item');
+            items.forEach(item => {
+                if (category === 'all') {
+                    item.style.display = 'flex';
+                } else if (item.classList.contains(category)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
                 }
+            });
+        }
+
+        // Modal Handler
+        const modalBackdrop = document.getElementById('modalBackdrop');
+        const modalContents = document.querySelectorAll('.modal-content');
+
+        function openModal(modalId) {
+            modalBackdrop.classList.remove('hidden');
+            modalContents.forEach(m => m.classList.add('hidden'));
+            const targetModal = document.getElementById(modalId);
+            if (targetModal) {
+                targetModal.classList.remove('hidden');
             }
         }
-        
-        window.addEventListener("scroll", reveal);
-        // Trigger once on load
-        reveal();
+
+        function closeModal() {
+            modalBackdrop.classList.add('hidden');
+            modalContents.forEach(m => m.classList.add('hidden'));
+        }
+
+        // Close modal when clicking backdrop
+        modalBackdrop.addEventListener('click', (e) => {
+            if (e.target === modalBackdrop) {
+                closeModal();
+            }
+        });
+
+        // Form Submit Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                document.getElementById('formFeedback').classList.remove('hidden');
+            }, 800);
+        }
+
+        function resetContactForm() {
+            document.getElementById('contactForm').reset();
+            document.getElementById('formFeedback').classList.add('hidden');
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.innerHTML = '<span>Submit Executive Brief</span><i class="fa-solid fa-paper-plane text-xs"></i>';
+            submitBtn.disabled = false;
+        }
+
+        // CV Download Simulation
+        function simulateCVDownload(e) {
+            const btn = e.currentTarget;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Preparing Profile...';
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Download Complete';
+                btn.classList.remove('from-gold-400', 'to-gold-600');
+                btn.classList.add('bg-emerald-500', 'text-white');
+                
+                // Trigger downloadable file mock link
+                const dummyContent = "I Made Agus Ferri Saga - Executive Brief & Portfolio Profile";
+                const blob = new Blob([dummyContent], { type: 'text/plain' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = "I_Made_Agus_Ferri_Saga_Executive_Profile.txt";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }, 1200);
+        }
     </script>
 </body>
 </html>
